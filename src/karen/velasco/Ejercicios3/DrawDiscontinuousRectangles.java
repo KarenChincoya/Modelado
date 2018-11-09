@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package velasco.karen.Ejercicios3;
+package karen.velasco.Ejercicios3;
 
 import com.sun.prism.BasicStroke;
 import java.awt.FlowLayout;

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package velasco.karen.Ejercicios3;
+package karen.velasco.Ejercicios3;
 
-import java.awt.BasicStroke;
-import java.awt.Container;
+import java.awt.AlphaComposite;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Stroke;
+import java.awt.RenderingHints;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -19,29 +19,33 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  *
  * @author Karen Velasco
  */
-public class DrawContext extends JFrame{
-    public DrawContext(){
-        super("Predefine the context");
+public class DrawRendering extends JFrame{
+    
+    public DrawRendering(){
+        
+        super("Rendering images");
         super.setLayout(new FlowLayout());
                 
-        this.setSize(250, 250);
+        this.setSize(600, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
     }
     
     public void paint(Graphics g){
-        //super.paint(g);
+        super.paint(g);
+        
+        RenderingHints rh = new RenderingHints(
+        RenderingHints.KEY_ANTIALIASING,
+        RenderingHints.VALUE_ANTIALIAS_OFF);
+        
+        rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_SPEED);
+        
         Graphics2D g2 = (Graphics2D) g;
-
-        Rectangle2D r2 = new Rectangle2D.Float(75, 50, 100, 25);
+        g2.setRenderingHints(rh);
         
-        Stroke pincel = new BasicStroke(4.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER);
-        
-        g2.setStroke(pincel);
-        g2.draw(r2);
     }
     
     public static void main(String[] args) {
-        new DrawContext();
+        new DrawRendering();
     }
 }
