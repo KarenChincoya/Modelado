@@ -18,7 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import karen.velasco.ejercicios.DrawFunction;
+import karen.velasco.Ejercicios4.DrawFunction;
 
 /**
  *
