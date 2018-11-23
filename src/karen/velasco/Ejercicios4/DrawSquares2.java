@@ -71,7 +71,7 @@ public class DrawSquares2 extends JFrame{
             @Override
             public void onBtnClick(int width, int height, int beginning) {
             
-                if(width>=1 && width<=50 && height>=1 && height<=50){
+                if(width>=1 && width<=50 && height>=1 && height<=35 && beginning<(width*height)){
                     /*Once you have the number set the values to the object*/
                 DrawSquares2.this.width = width;
                 DrawSquares2.this.height = height;
@@ -90,9 +90,9 @@ public class DrawSquares2 extends JFrame{
                 pnlData.getBtnIniciar().setEnabled(false);
                 pnlBotones.enableEverything();
                 DrawSquares2.this.revalidate();
-                DrawSquares2.this.repaint();v
+                DrawSquares2.this.repaint();
                 }else{
-                   
+                    JOptionPane.showMessageDialog(null, "Los valores deben estar en [1,50] y el inicio debe estar en [0, width*height]");
                 }
             }
         });
@@ -203,7 +203,7 @@ public class DrawSquares2 extends JFrame{
         //1. if the last square is in the same row, pass, else, false
         int alcance = ((rectangulo.getInicio()-(rectangulo.getInicio()%this.width))/(this.width))+1;
         alcance = alcance+h;
-        if(!(alcance<=height)){
+        if(!(alcance<this.height)){
             newRectangle.insertInvalido();
         }     
         return newRectangle;
