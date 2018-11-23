@@ -5,6 +5,16 @@
  */
 package karen.velasco.Ejercicios4;
 
+/**
+ *
+ * @author Karen Velasco
+ */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -16,7 +26,7 @@ import javax.swing.JPanel;
  *
  * @author Karen Velasco
  */
-public class PnlBotones extends JPanel{
+public class PnlBotones2 extends JPanel{
     
     private JButton btn1 = new JButton();
     private JButton btnUp = new JButton("↑");
@@ -30,7 +40,21 @@ public class PnlBotones extends JPanel{
 
     private ExpandListener listener;
     
-    public PnlBotones(){
+    public void disableEverything(){
+        btnUp.setEnabled(false);
+        btnLeft.setEnabled(false);
+        btnRight.setEnabled(false);
+        btnDown.setEnabled(false);
+    }
+    
+    public void enableEverything(){
+        btnUp.setEnabled(true);
+        btnLeft.setEnabled(true);
+        btnRight.setEnabled(true);
+        btnDown.setEnabled(true);
+    }
+    
+    public PnlBotones2(){
         super.setLayout(new GridLayout(3,3));
         super.setPreferredSize(new Dimension(140,140));
         
@@ -183,3 +207,4 @@ public class PnlBotones extends JPanel{
     
     
 }
+
